@@ -1,11 +1,28 @@
 version: '3.1'
 services:
   stats-server:
+    build: .
     ports:
       - "9090:9090"
+    depends_on:
+      - stats-db
+    environment:
+      - DB_NAME=stats_db
+      - POSTGRES_USER=root
+      - DB_HOST=stats-db
+      - DB_PORT=5432
+      - TZ=GMT
+
 
   stats-db:
     image: postgres:14-alpine
+    volumes:
+      - /var/lib/postgresql/data/
+    environment:
+      - POSTGRES_DB=stats-db
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - TZ=GMT
 
   ewm-service:
     ports:
