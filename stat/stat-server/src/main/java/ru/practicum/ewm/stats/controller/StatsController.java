@@ -1,6 +1,6 @@
 package ru.practicum.ewm.stats.controller;
 
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.practicum.ewm.dto.stats.ViewStats;
 import ru.practicum.ewm.dto.stats.ViewsStatsRequest;
@@ -9,9 +9,13 @@ import ru.practicum.ewm.stats.service.StatsService;
 import java.util.List;
 
 @RestController
-@RequiredArgsConstructor
 public class StatsController {
     private final StatsService statsService;
+
+    @Autowired
+    public StatsController(StatsService statsService){
+        this.statsService=statsService;
+    }
 
     @PostMapping(value = "/hit")
     public void addHit(@RequestBody ViewsStatsRequest request){
