@@ -29,7 +29,7 @@ public class StatsServiceImpl implements StatsService {
         if (unique == null && uris == null) {
             return statsRepository.returnDates(parseDateTime(start), parseDateTime(end));
         } else if (unique != null && uris == null) {
-            if (unique == "true") {
+            if (unique.equals("true")) {
                 return statsRepository.returnDatesAndUnique(parseDateTime(start), parseDateTime(end));
             } else {
                 return statsRepository.returnDates(parseDateTime(start), parseDateTime(end));
@@ -37,7 +37,7 @@ public class StatsServiceImpl implements StatsService {
         } else if (unique == null) {
             return statsRepository.returnDatesAndUris(parseDateTime(start), parseDateTime(end), uris);
         } else {
-            if (unique == "true") {
+            if (unique.equals("true")) {
                 return statsRepository.returnDatesAndUrisAndUnique(parseDateTime(start), parseDateTime(end), uris);
             } else {
                 return statsRepository.returnDatesAndUris(parseDateTime(start), parseDateTime(end), uris);
