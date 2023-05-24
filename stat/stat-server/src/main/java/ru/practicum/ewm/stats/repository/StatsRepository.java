@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
-public interface StatsRepository extends JpaRepository<EndpointHit, Long> {
+public interface StatsRepository extends JpaRepository<EndpointHit, Long>{
 
     @Query("SELECT new ru.practicum.ewm.dto.stats.ViewStats(e.app, e.uri, COUNT(e.uri)) " +
             "FROM EndpointHit as e " +
