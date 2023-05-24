@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class ViewsStatsRequest {
+public class ViewsStatsRequest{
     String app;
     String uri;
     String ip;
