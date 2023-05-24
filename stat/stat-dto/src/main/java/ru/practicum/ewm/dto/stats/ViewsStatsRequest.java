@@ -14,7 +14,7 @@ public class ViewsStatsRequest {
     String ip;
     String timestamp;
 
-    public EndpointHit mapToEndpointHit(ViewsStatsRequest viewsStatsRequest){
+    public EndpointHit mapToEndpointHit(ViewsStatsRequest viewsStatsRequest) {
         EndpointHit endpointHit = new EndpointHit();
         endpointHit.setApp(viewsStatsRequest.getApp());
         endpointHit.setUri(viewsStatsRequest.getUri());
