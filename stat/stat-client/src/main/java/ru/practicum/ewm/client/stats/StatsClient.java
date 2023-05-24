@@ -14,7 +14,7 @@ import java.util.Arrays;
 
 
 @Service
-public class StatsClient{
+public class StatsClient {
     @Value("${stats-service.url}")
     private String statsServiceUrl;
     private final HttpClient statsClient = HttpClient.newBuilder().build();
@@ -44,5 +44,4 @@ public class StatsClient{
 
         System.out.println(response.body());
     }
-
 }
