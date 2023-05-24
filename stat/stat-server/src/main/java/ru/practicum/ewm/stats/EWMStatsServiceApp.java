@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories
 @EntityScan("ru.practicum.ewm.dto.stats")
 public class EWMStatsServiceApp {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         SpringApplication.run(EWMStatsServiceApp.class, args);
     }
 }
