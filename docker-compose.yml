@@ -25,6 +25,7 @@ services:
       - TZ=GMT
 
   ewm-service:
+    build: .
     ports:
       - "8080:8080"
 
