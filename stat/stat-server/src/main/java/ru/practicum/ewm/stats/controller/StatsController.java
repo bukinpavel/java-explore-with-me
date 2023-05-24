@@ -8,7 +8,7 @@ import ru.practicum.ewm.stats.service.StatsService;
 import java.util.List;
 
 @RestController
-public class StatsController {
+public class StatsController{
     private final StatsService statsService;
 
     @Autowired
