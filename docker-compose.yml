@@ -14,6 +14,7 @@ services:
       - DB_PORT=5432
       - TZ=GMT
 
+
   stats-db:
     image: postgres:14-alpine
     volumes:
