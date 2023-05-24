@@ -20,16 +20,15 @@ public class StatsClient {
     private final HttpClient statsClient = HttpClient.newBuilder().build();
     private final ObjectMapper objectMapper = new ObjectMapper();
 
-    public void postHit (ViewsStatsRequest statsRequest) throws Exception {
+    public void postHit(ViewsStatsRequest statsRequest) throws Exception {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(String.format("%/hit", statsServiceUrl)))
                 .POST(HttpRequest.BodyPublishers.ofString(objectMapper.writeValueAsString(statsRequest)))
                 .build();
-
         HttpResponse<?> response = statsClient.send(request, HttpResponse.BodyHandlers.discarding());
     }
 
-    public void getStats(String start, String end, String[] uris, String unique)  throws Exception {
+    public void getStats(String start, String end, String[] uris, String unique) throws Exception {
         HttpClient client = HttpClient.newHttpClient();
         URIBuilder getStatsUri = new URIBuilder(String.format("%stats", statsServiceUrl));
         getStatsUri.addParameter("start", start);
