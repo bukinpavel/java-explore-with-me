@@ -15,7 +15,7 @@ import java.util.Arrays;
 
 @Service
 public class StatsClient {
-    @Value("${stats-service.url}") // write in properties
+    @Value("${stats-service.url}")
     private String statsServiceUrl;
     private final HttpClient statsClient = HttpClient.newBuilder().build();
     private final ObjectMapper objectMapper = new ObjectMapper();
