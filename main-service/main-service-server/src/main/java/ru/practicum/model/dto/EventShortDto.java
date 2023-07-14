@@ -1,21 +1,29 @@
-package ru.practicum.dto;
+package ru.practicum.model.dto;
 
 import lombok.AccessLevel;
-import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
 @Data
-@Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class EventShortDto {
+
     Long id;
+
     String annotation;
+
+    Integer confirmedRequests;
+
     CategoryDto category;
-    int confirmedRequests;
+
     String eventDate;
-    UserShortDto initiator;
+
+    UserDto initiator;
+
     Boolean paid;
+
     String title;
-    Integer views;
+
+    Long views;
 }
+

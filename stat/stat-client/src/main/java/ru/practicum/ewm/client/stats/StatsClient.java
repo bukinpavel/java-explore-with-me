@@ -1,46 +1,57 @@
 package ru.practicum.ewm.client.stats;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.http.client.utils.URIBuilder;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.web.reactive.function.client.WebClient;
+import ru.practicum.ewm.dto.stats.ViewStats;
 import ru.practicum.ewm.dto.stats.ViewsStatsRequest;
 
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
+import javax.servlet.http.HttpServletRequest;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.List;
 
 
-@Service
+@Slf4j
 public class StatsClient {
-    @Value("${stats-service.url}")
-    private String statsServiceUrl;
-    private final HttpClient statsClient = HttpClient.newBuilder().build();
-    private final ObjectMapper objectMapper = new ObjectMapper();
 
-    public void postHit(ViewsStatsRequest statsRequest) throws Exception {
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(String.format("%/hit", statsServiceUrl)))
-                .POST(HttpRequest.BodyPublishers.ofString(objectMapper.writeValueAsString(statsRequest)))
-                .build();
-        HttpResponse<?> response = statsClient.send(request, HttpResponse.BodyHandlers.discarding());
+    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    private final WebClient webClient;
+
+    public StatsClient(String url) {
+        this.webClient = WebClient.create(url);
     }
 
-    public void getStats(String start, String end, String[] uris, String unique) throws Exception {
-        HttpClient client = HttpClient.newHttpClient();
-        URIBuilder getStatsUri = new URIBuilder(String.format("%stats", statsServiceUrl));
-        getStatsUri.addParameter("start", start);
-        getStatsUri.addParameter("end", end);
-        getStatsUri.addParameter("uris", Arrays.toString(uris));
-        getStatsUri.addParameter("unique", unique);
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(getStatsUri.build())
+    public void hit(HttpServletRequest httpRequest) {
+        ViewsStatsRequest hitDto = ViewsStatsRequest.builder()
+                .app("ewm-service")
+                .ip(httpRequest.getRemoteAddr())
+                .uri(httpRequest.getRequestURI())
+                .timestamp(LocalDateTime.now().format(FORMATTER))
                 .build();
-        HttpResponse<String> response =
-                client.send(request, HttpResponse.BodyHandlers.ofString());
+        webClient.post()
+                .uri("/hit")
+                .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
+                .bodyValue(hitDto)
+                .retrieve()
+                .bodyToMono(ViewsStatsRequest.class)
+                .block();
+    }
 
-        System.out.println(response.body());
+    public List<ViewStats> getListStats(LocalDateTime start, LocalDateTime end, List<String> uris, Boolean unique) {
+        return webClient.get()
+                .uri(uriBuilder -> uriBuilder.path("/stats")
+                        .queryParam("start", start.format(FORMATTER))
+                        .queryParam("end", end.format(FORMATTER))
+                        .queryParam("uris", uris)
+                        .queryParam("unique", unique)
+                        .build())
+                .retrieve()
+                .bodyToFlux(ViewStats.class)
+                .collectList()
+                .block();
     }
 }

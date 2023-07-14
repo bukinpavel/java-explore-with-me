@@ -1,16 +1,22 @@
-package ru.practicum.dto;
+package ru.practicum.model.dto;
 
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
-import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class NewCategoryDto {
+public class UserNewRequestDto {
+
     @NotBlank
-    @Length(max = 50)
+    @Size(min = 6, max = 254)
+    String email;
+
+    @NotBlank
+    @Size(min = 2, max = 250)
     String name;
 }
+

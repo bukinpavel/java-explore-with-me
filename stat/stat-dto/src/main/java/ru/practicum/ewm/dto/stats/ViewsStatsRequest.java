@@ -1,12 +1,14 @@
 package ru.practicum.ewm.dto.stats;
 
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 @Data
+@Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ViewsStatsRequest {
     String app;

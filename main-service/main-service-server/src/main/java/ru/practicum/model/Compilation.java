@@ -1,32 +1,33 @@
 package ru.practicum.model;
 
 import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import ru.practicum.model.event.Event;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity
-@Table(name = "compilation")
-@Getter
-@Setter
-@ToString
+@Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Table(name = "compilations")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Compilation {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long compilationId;
-    @Column
-    String title;
-    @Column
-    Boolean pinned;
-    @ManyToMany
-    @JoinTable(name = "compilations_events",
+    Long id;
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @JoinTable(name = "event_compilation",
             joinColumns = @JoinColumn(name = "compilation_id"),
-            inverseJoinColumns = @JoinColumn(name = "event_id")) //посмотреть правильность
-    Set<Event> events;
+            inverseJoinColumns = @JoinColumn(name = "event_id"))
+    List<Event> events;
+
+    Boolean pinned;
+
+    String title;
 }

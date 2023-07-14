@@ -7,21 +7,30 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
-@Entity
 @Data
+@Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "users")
+@Table(name = "comments")
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    String email;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "event_id")
+    Event event;
 
-    String name;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    User user;
+
+    String comment;
+
+    LocalDateTime commentDate;
 }
 
