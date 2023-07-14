@@ -2,7 +2,6 @@ package ru.practicum.ewm.client.stats;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
-import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import ru.practicum.ewm.dto.stats.ViewStats;
 import ru.practicum.ewm.dto.stats.ViewsStatsRequest;
