@@ -31,4 +31,3 @@ public class ErrorResponse {
 
     String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 }
-

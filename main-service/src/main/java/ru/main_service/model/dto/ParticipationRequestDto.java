@@ -26,4 +26,3 @@ public class ParticipationRequestDto {
 
     String status;
 }
-

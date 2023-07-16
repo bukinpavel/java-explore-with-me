@@ -2,12 +2,12 @@ package ru.main_service.controllers.admin;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.annotation.*;
 import ru.main_service.model.dto.EventFullDto;
 import ru.main_service.model.dto.EventState;
 import ru.main_service.model.dto.EventUpdateAdminRequestDto;
 import ru.main_service.services.EventService;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.time.LocalDateTime;

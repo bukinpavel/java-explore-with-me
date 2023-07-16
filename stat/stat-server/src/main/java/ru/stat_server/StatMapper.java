@@ -1,10 +1,10 @@
 package ru.stat_server;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
 import ru.stat_dto.EndpointHitDto;
 import ru.stat_server.model.EndpointHit;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class StatMapper {
 

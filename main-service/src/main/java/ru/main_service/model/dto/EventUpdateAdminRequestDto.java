@@ -49,4 +49,3 @@ public class EventUpdateAdminRequestDto {
         Double lat;
     }
 }
-

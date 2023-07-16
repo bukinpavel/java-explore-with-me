@@ -48,4 +48,3 @@ public class EventUpdateUserRequestDto {
         Double lat;
     }
 }
-

@@ -57,4 +57,3 @@ public class Event {
 
     Double latitude;
 }
-

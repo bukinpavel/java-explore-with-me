@@ -3,8 +3,8 @@ package ru.stat_dto;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Service;
-import javax.validation.constraints.NotNull;
 
+import javax.validation.constraints.NotNull;
 
 @Data
 @Builder

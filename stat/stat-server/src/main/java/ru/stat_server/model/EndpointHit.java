@@ -35,4 +35,3 @@ public class EndpointHit {
     private LocalDateTime timestamp;
 
 }
-

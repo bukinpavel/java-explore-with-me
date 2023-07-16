@@ -1,11 +1,11 @@
 package ru.main_service.mappers;
 
 import lombok.extern.slf4j.Slf4j;
+import ru.main_service.model.Event;
 import ru.main_service.model.Participation;
 import ru.main_service.model.User;
-import ru.main_service.model.Event;
-import ru.main_service.model.dto.ParticipationRequestDto;
 import ru.main_service.model.dto.RequestStatus;
+import ru.main_service.model.dto.ParticipationRequestDto;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -36,4 +36,3 @@ public class ParticipationMapper {
     }
 
 }
-

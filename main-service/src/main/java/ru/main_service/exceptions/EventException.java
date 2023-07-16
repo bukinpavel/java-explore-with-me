@@ -7,4 +7,3 @@ public class EventException extends RuntimeException {
     }
 
 }
-

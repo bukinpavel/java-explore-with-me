@@ -5,4 +5,3 @@ public class RequestException extends RuntimeException {
         super(message);
     }
 }
-

@@ -2,16 +2,17 @@ package ru.main_service.services.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import ru.main_service.repositories.UserRepository;
 import ru.main_service.exceptions.NotFoundException;
 import ru.main_service.exceptions.RequestException;
 import ru.main_service.mappers.UserMapper;
 import ru.main_service.model.User;
 import ru.main_service.model.dto.UserDto;
 import ru.main_service.model.dto.UserNewRequestDto;
-import ru.main_service.repositories.UserRepository;
 import ru.main_service.services.UserService;
 
 import javax.transaction.Transactional;
@@ -64,4 +65,3 @@ public class UserServiceImpl implements UserService {
     }
 
 }
-

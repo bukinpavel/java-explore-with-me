@@ -4,18 +4,18 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
-import ru.main_service.exceptions.NotFoundException;
-import ru.main_service.exceptions.RequestException;
-import ru.main_service.mappers.ParticipationMapper;
 import ru.main_service.model.Event;
 import ru.main_service.model.Participation;
-import ru.main_service.model.User;
-import ru.main_service.model.dto.EventState;
-import ru.main_service.model.dto.ParticipationRequestDto;
 import ru.main_service.model.dto.RequestStatus;
 import ru.main_service.repositories.EventRepository;
 import ru.main_service.repositories.ParticipationRepository;
 import ru.main_service.repositories.UserRepository;
+import ru.main_service.exceptions.NotFoundException;
+import ru.main_service.exceptions.RequestException;
+import ru.main_service.mappers.ParticipationMapper;
+import ru.main_service.model.User;
+import ru.main_service.model.dto.EventState;
+import ru.main_service.model.dto.ParticipationRequestDto;
 import ru.main_service.services.ParticipationService;
 
 import javax.transaction.Transactional;
@@ -99,4 +99,3 @@ public class ParticipationServiceImpl implements ParticipationService {
                 new NotFoundException("Событие с id-" + eventId + " не найдено"));
     }
 }
-

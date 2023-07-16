@@ -20,4 +20,3 @@ public class CompilationNewDto {
     String title;
 
 }
-

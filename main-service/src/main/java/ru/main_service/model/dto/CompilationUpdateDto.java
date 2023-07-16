@@ -17,4 +17,3 @@ public class CompilationUpdateDto {
     @Size(min = 1, max = 50)
     String title;
 }
-

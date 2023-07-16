@@ -1,12 +1,12 @@
 package ru.main_service.mappers;
 
 import lombok.extern.slf4j.Slf4j;
-import ru.main_service.model.Category;
 import ru.main_service.model.Event;
 import ru.main_service.model.User;
 import ru.main_service.model.dto.EventFullDto;
 import ru.main_service.model.dto.EventNewDto;
 import ru.main_service.model.dto.EventShortDto;
+import ru.main_service.model.Category;
 
 import java.time.format.DateTimeFormatter;
 
@@ -67,6 +67,21 @@ public class EventMapper {
         eventDto.setAnnotation(event.getAnnotation());
         eventDto.setCategory(CategoryMapper.mapToDto(event.getCategory()));
         eventDto.setConfirmedRequests(confirmedRequest);
+        eventDto.setInitiator(UserMapper.mapToDto(event.getInitiator()));
+        eventDto.setPaid(event.getPaid());
+        eventDto.setViews(event.getViews());
+        eventDto.setTitle(event.getTitle());
+        return eventDto;
+    }
+
+    public static EventShortDto mapToShortDtoTest(Event event) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        EventShortDto eventDto = new EventShortDto();
+        eventDto.setId(event.getId());
+        eventDto.setEventDate(event.getEventDate().format(formatter));
+        eventDto.setAnnotation(event.getAnnotation());
+        eventDto.setCategory(CategoryMapper.mapToDto(event.getCategory()));
+        eventDto.setConfirmedRequests(null);
         eventDto.setInitiator(UserMapper.mapToDto(event.getInitiator()));
         eventDto.setPaid(event.getPaid());
         eventDto.setViews(event.getViews());

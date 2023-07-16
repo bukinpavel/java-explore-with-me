@@ -13,4 +13,3 @@ public interface ParticipationService {
     ParticipationRequestDto canselRequestByUserForEvent(Long userId, Long eventId);
 
 }
-

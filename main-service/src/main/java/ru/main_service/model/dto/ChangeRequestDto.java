@@ -19,4 +19,3 @@ public class ChangeRequestDto {
     List<ParticipationRequestDto> rejectedRequests;
 
 }
-

@@ -19,4 +19,3 @@ public class UserNewRequestDto {
     @Size(min = 2, max = 250)
     String name;
 }
-

@@ -3,9 +3,9 @@ package ru.main_service.controllers.admin;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
+import ru.main_service.model.dto.UserDto;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import ru.main_service.model.dto.UserDto;
 import ru.main_service.model.dto.UserNewRequestDto;
 import ru.main_service.services.UserService;
 

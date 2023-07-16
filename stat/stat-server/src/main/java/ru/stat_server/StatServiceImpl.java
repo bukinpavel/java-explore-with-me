@@ -31,4 +31,3 @@ public class StatServiceImpl implements StatService {
         return viewStats;
     }
 }
-

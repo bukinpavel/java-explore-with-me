@@ -24,5 +24,5 @@ public interface StatRepository extends JpaRepository<EndpointHit, Long> {
             "order by count(i.ip) desc")
     List<ViewStats> getByUri(LocalDateTime startDate, LocalDateTime endDate, List<String> uris);
 
-}
 
+}

@@ -1,8 +1,8 @@
 package ru.main_service.repositories;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import ru.main_service.model.Participation;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
@@ -26,4 +26,3 @@ public interface ParticipationRepository extends JpaRepository<Participation, Lo
     List<Participation> findAllParticipation(List<Long> ids);
 
 }
-

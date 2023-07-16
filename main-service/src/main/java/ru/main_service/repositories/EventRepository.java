@@ -1,9 +1,9 @@
 package ru.main_service.repositories;
 
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import ru.main_service.model.Event;
+import org.springframework.data.jpa.repository.JpaRepository;
 import ru.main_service.model.dto.EventState;
 
 import java.time.LocalDateTime;
@@ -49,4 +49,3 @@ public interface EventRepository extends JpaRepository<Event, Long> {
 
 
 }
-
