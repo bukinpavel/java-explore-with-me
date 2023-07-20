@@ -18,7 +18,7 @@ public class PrivateCommentController {
 
     private final CommentService commentService;
 
-    @PostMapping()
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public CommentResponseDto createComment(@PathVariable Long userId,
                                             @PathVariable Long eventId,
@@ -27,7 +27,7 @@ public class PrivateCommentController {
         return commentService.createComment(commentDto, userId, eventId);
     }
 
-    @PatchMapping()
+    @PatchMapping
     public CommentResponseDto updateComment(@PathVariable Long userId,
                                             @PathVariable Long eventId,
                                             @Valid @RequestBody CommentRequestDto commentDto) {
@@ -35,7 +35,7 @@ public class PrivateCommentController {
         return commentService.updateComment(commentDto, userId, eventId);
     }
 
-    @DeleteMapping()
+    @DeleteMapping
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteComment(@PathVariable Long userId,
                               @PathVariable Long eventId) {
