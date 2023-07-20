@@ -16,19 +16,20 @@ import java.time.LocalDateTime;
 public final class CommentMapper {
 
     public static CommentResponseDto mapToDto(Comment comment) {
-        CommentResponseDto commentDto = new CommentResponseDto();
-        commentDto.setId(comment.getId());
-        commentDto.setTitleEvent(comment.getEvent().getTitle());
-        commentDto.setUserName(comment.getUser().getName());
-        commentDto.setComment(comment.getComment());
-        commentDto.setCommentDate(comment.getCommentDate());
-        return commentDto;
+        return CommentResponseDto.builder()
+                .id(comment.getId())
+                .titleEvent(comment.getEvent().getTitle())
+                .userName(comment.getUser().getName())
+                .comment(comment.getComment())
+                .commentDate(comment.getCommentDate())
+                .build();
+
     }
 
     public static Comment mapToModel(CommentRequestDto commentDto) {
-        Comment comment = new Comment();
-        comment.setComment(commentDto.getComment());
-        comment.setCommentDate(LocalDateTime.now());
-        return comment;
+        return Comment.builder()
+                .comment(commentDto.getComment())
+                .commentDate(LocalDateTime.now())
+                .build();
     }
 }
