@@ -1,5 +1,8 @@
 package ru.main_service.mappers;
 
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import ru.main_service.model.Comment;
 import ru.main_service.model.dto.CommentRequestDto;
@@ -8,7 +11,9 @@ import ru.main_service.model.dto.CommentResponseDto;
 import java.time.LocalDateTime;
 
 @Slf4j
-public class CommentMapper {
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@Builder
+public final class CommentMapper {
 
     public static CommentResponseDto mapToDto(Comment comment) {
         CommentResponseDto commentDto = new CommentResponseDto();
