@@ -73,20 +73,4 @@ public class EventMapper {
         eventDto.setTitle(event.getTitle());
         return eventDto;
     }
-
-    public static EventShortDto mapToShortDtoTest(Event event) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        EventShortDto eventDto = new EventShortDto();
-        eventDto.setId(event.getId());
-        eventDto.setEventDate(event.getEventDate().format(formatter));
-        eventDto.setAnnotation(event.getAnnotation());
-        eventDto.setCategory(CategoryMapper.mapToDto(event.getCategory()));
-        eventDto.setConfirmedRequests(null);
-        eventDto.setInitiator(UserMapper.mapToDto(event.getInitiator()));
-        eventDto.setPaid(event.getPaid());
-        eventDto.setViews(event.getViews());
-        eventDto.setTitle(event.getTitle());
-        return eventDto;
-    }
-
 }

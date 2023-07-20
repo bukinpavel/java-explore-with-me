@@ -1,0 +1,1055 @@
+{
+  "info": {
+    "_postman_id": "5f071d8b-e23e-4a34-8dff-c85df9bd9503",
+    "name": "Test_comments",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "26025758"
+  },
+  "item": [
+    {
+      "name": "Добавление категории",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(201);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Кинофестивали\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/admin/categories",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "categories"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Добавление пользователя 1",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(201);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Индиана Джонс\",\n  \"email\": \"indiJunior@mail.ru\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/admin/users",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Добавление пользователя 2",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(201);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Энакин Скайуокер\",\n  \"email\": \"DarkForce@mail.ru\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/admin/users",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "",
+              "value": "",
+              "disabled": true
+            },
+            {
+              "key": "",
+              "value": "",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Добавление пользователя 3",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(201);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Джордж Лукас\",\n  \"email\": \"LukasFilm@mail.ru\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/admin/users",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Добавление события 1",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(201);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "User-Agent",
+            "value": "PostmanRuntime/7.32.2",
+            "type": "text"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\"annotation\":\"Премьера фильма Звездные войны: Дарт Джа-джа Бинкс\",\n\"category\":1,\n\"description\":\"Генерал, член Галактического сената сначала в качестве младшего представителя системы Набу, а затем — сенатор от сектора Чоммель, новый глава разрушенной империи. Бинкс — срывает маску, ситхи больше не прячутся в тени. Республика на грани раскола. Помочь сохранить мир могут только отважные джедаи и их союзники\",\n\"eventDate\":\"2024-06-17 05:04:14\",\n\"location\":{\"lat\":-65.104,\"lon\":47.8467},\n\"paid\":\"false\",\n\"participantLimit\":\"233\",\n\"requestModeration\":\"true\",\n\"title\":\"Звездные войны: Дарт Джа-джа Бинкс\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/users/:userId/events",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            ":userId",
+            "events"
+          ],
+          "variable": [
+            {
+              "key": "userId",
+              "value": "3"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Добавление события 2",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {",
+              "    pm.response.to.have.status(201);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "User-Agent",
+            "value": "PostmanRuntime/7.32.2",
+            "type": "text"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\"annotation\":\"Премьера фильма Индина Джонс: И инопланетное вторжение\",\n\"category\":1,\n\"description\":\"Индиана Джонс отправляется на орбиту луны, чтобы сразиться с инопланетянами. В этом ему помогут его друзья, а также бывышие враги\",\n\"eventDate\":\"2024-06-17 10:04:14\",\n\"location\":\n{\n    \"lat\":-65.104,\n    \"lon\":47.8467\n    },\n\"paid\":\"false\",\n\"participantLimit\":\"233\",\n\"requestModeration\":\"true\",\n\"title\":\"Индина Джонс: И инопланетное вторжение\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/users/:userId/events",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            ":userId",
+            "events"
+          ],
+          "variable": [
+            {
+              "key": "userId",
+              "value": "3"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Добавление события 3",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {",
+              "    pm.response.to.have.status(201);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "User-Agent",
+            "value": "PostmanRuntime/7.32.2",
+            "type": "text"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\"annotation\":\"Премьера документального фильма о Джорде Лукасе\",\n\"category\":1,\n\"description\":\"Джордж Уо́лтон Лу́кас-младший (англ. George Walton Lucas, Jr.; род. 14 мая 1944, Модесто, Калифорния, США) — американский кинопродюсер, сценарист, режиссёр, монтажёр, оператор и предприниматель\",\n\"eventDate\":\"2024-06-17 12:04:14\",\n\"location\":\n{\n    \"lat\":-65.104,\n    \"lon\":47.8467\n    },\n\"paid\":\"false\",\n\"participantLimit\":\"233\",\n\"requestModeration\":\"true\",\n\"title\":\"Джордж Лукас биография\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/users/:userId/events",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            ":userId",
+            "events"
+          ],
+          "variable": [
+            {
+              "key": "userId",
+              "value": "3"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Добавление комментария с пустым полем comment",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Ответ должен содержать код статуса 400 и данные в формате json\", function () {",
+              "    pm.response.to.be.badRequest;    ",
+              "    pm.response.to.be.withBody;",
+              "    pm.response.to.be.json;",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"comment\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/users/comments/:userId/:eventId",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            "comments",
+            ":userId",
+            ":eventId"
+          ],
+          "variable": [
+            {
+              "key": "userId",
+              "value": "1"
+            },
+            {
+              "key": "eventId",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Добавление комментария от 1 пользователя к 2 событию",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {",
+              "    pm.response.to.have.status(201);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"comment\": \"Актер, играющий нового Инди, - никуда не годится. Никакой харизмы.\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/users/comments/:userId/:eventId",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            "comments",
+            ":userId",
+            ":eventId"
+          ],
+          "variable": [
+            {
+              "key": "userId",
+              "value": "1"
+            },
+            {
+              "key": "eventId",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Изменение комментария от 1 пользователя к 2 событию",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"comment\": \"Ладно может не так все плохо, актриса второго плана ничего себе такая\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/users/comments/:userId/:eventId",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            "comments",
+            ":userId",
+            ":eventId"
+          ],
+          "variable": [
+            {
+              "key": "userId",
+              "value": "1"
+            },
+            {
+              "key": "eventId",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Добавление комментария от 1 пользователя к 3 событию",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {",
+              "    pm.response.to.have.status(201);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"comment\": \"Джордж Лукас человек легенда. Надо смотреть\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/users/comments/:userId/:eventId",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            "comments",
+            ":userId",
+            ":eventId"
+          ],
+          "variable": [
+            {
+              "key": "userId",
+              "value": "1"
+            },
+            {
+              "key": "eventId",
+              "value": "3"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Удаление предыдущего комментария",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Ответ должен содержать код статуса 204\", function () {",
+              "    pm.response.to.have.status(204);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/users/comments/:userId/:eventId",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            "comments",
+            ":userId",
+            ":eventId"
+          ],
+          "variable": [
+            {
+              "key": "userId",
+              "value": "1"
+            },
+            {
+              "key": "eventId",
+              "value": "3"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Добавление комментария от 2 пользоватеся к 2 событию",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {",
+              "    pm.response.to.have.status(201);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"comment\": \"Человек в шляпе будет сражаться в галактике. Охото посмотреть как он справится с звездолетами. Надеюсь стреляет он лучше чем мои солдаты\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/users/comments/:userId/:eventId",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            "comments",
+            ":userId",
+            ":eventId"
+          ],
+          "variable": [
+            {
+              "key": "userId",
+              "value": "2"
+            },
+            {
+              "key": "eventId",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Добавление комментария от 1 пользователя к 1 событию",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"comment\": \"Новые звездные войны? Это какая уже часть? Хотя другие не смотрел. Ушастый в главной роли, до сих пор не понятно кто его играет\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/users/comments/:userId/:eventId",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            "comments",
+            ":userId",
+            ":eventId"
+          ],
+          "variable": [
+            {
+              "key": "userId",
+              "value": "1"
+            },
+            {
+              "key": "eventId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Добавление комментария от 2 пользователя к 1 событию",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {",
+              "    pm.response.to.have.status(201);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"comment\": \"Какое коварсвто, я должен был стать главным злодеем. На этого ушастого даже шлем не наденешь\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/users/comments/:userId/:eventId",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            "comments",
+            ":userId",
+            ":eventId"
+          ],
+          "variable": [
+            {
+              "key": "userId",
+              "value": "2"
+            },
+            {
+              "key": "eventId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Получение всех комментариев к событию 2",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Ответ должен содержать код статуса 200 и данные в формате json\", function () {",
+              "    pm.response.to.have.status(200);   ",
+              "});",
+              "pm.test(\"Test list comments response\", function () {",
+              "    pm.response.to.be.withBody;",
+              "    pm.response.to.be.json;",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.length, 'List length must be 2').to.eql(2);",
+              "});",
+              "pm.test(\"Test comments[0] 'id' field\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData[0]).to.have.property('id');",
+              "    pm.expect(jsonData[0].id);",
+              "});",
+              "pm.test(\"Test comments[0] 'titleEvent' field\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData[0]).to.have.property('titleEvent');",
+              "    pm.expect(jsonData[0].titleEvent);",
+              "});",
+              "pm.test(\"Test comments[0] 'userName' field\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData[0]).to.have.property('userName');",
+              "    pm.expect(jsonData[0].userName);",
+              "});",
+              "",
+              "pm.test(\"Test comments[1] 'id' field\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData[1]).to.have.property('id');",
+              "    pm.expect(jsonData[1].id);",
+              "});",
+              "pm.test(\"Test comments[1] 'titleEvent' field\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData[1]).to.have.property('titleEvent');",
+              "    pm.expect(jsonData[1].titleEvent);",
+              "});",
+              "pm.test(\"Test comments[1] 'userName' field\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData[1]).to.have.property('userName');",
+              "    pm.expect(jsonData[1].userName);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/comments/events/:eventId",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "comments",
+            "events",
+            ":eventId"
+          ],
+          "query": [
+            {
+              "key": "from",
+              "value": "0",
+              "disabled": true
+            },
+            {
+              "key": "size",
+              "value": "3",
+              "disabled": true
+            }
+          ],
+          "variable": [
+            {
+              "key": "eventId",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Получение всех комментариев от пользователя 1",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Ответ должен содержать код статуса 200 и данные в формате json\", function () {",
+              "    pm.response.to.have.status(200);   ",
+              "});",
+              "",
+              "pm.test(\"Test list comments response\", function () {",
+              "    pm.response.to.be.withBody;",
+              "    pm.response.to.be.json;",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.length, 'List length must be 2').to.eql(2);",
+              "});",
+              "",
+              "pm.test(\"Test comments[0] 'id' field\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData[0]).to.have.property('id');",
+              "    pm.expect(jsonData[0].id);",
+              "});",
+              "pm.test(\"Test comments[0] 'titleEvent' field\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData[0]).to.have.property('titleEvent');",
+              "    pm.expect(jsonData[0].titleEvent);",
+              "});",
+              "pm.test(\"Test comments[0] 'userName' field\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData[0]).to.have.property('userName');",
+              "    pm.expect(jsonData[0].userName);",
+              "});",
+              "",
+              "pm.test(\"Test comments[1] 'id' field\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData[1]).to.have.property('id');",
+              "    pm.expect(jsonData[1].id);",
+              "});",
+              "pm.test(\"Test comments[1] 'titleEvent' field\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData[1]).to.have.property('titleEvent');",
+              "    pm.expect(jsonData[1].titleEvent);",
+              "});",
+              "pm.test(\"Test comments[1] 'userName' field\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData[1]).to.have.property('userName');",
+              "    pm.expect(jsonData[1].userName);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "*/*",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/comments/users/:userId?from=0&size=3",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "comments",
+            "users",
+            ":userId"
+          ],
+          "query": [
+            {
+              "key": "from",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "3"
+            }
+          ],
+          "variable": [
+            {
+              "key": "userId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ]
+}
